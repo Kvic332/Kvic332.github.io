@@ -137,6 +137,25 @@ h1 .accent{color:var(--amber);}
 .flow-label.amber{fill:var(--amber);}
 .flow-line{stroke:var(--line);stroke-width:1;fill:none;}
 
+.portrait-frame{
+  position:relative;width:100%;
+  border:1px solid var(--amber-dim);border-radius:8px;
+  padding:14px;background:var(--navy-2);
+}
+.portrait-img{
+  width:100%;display:block;border-radius:4px;
+  filter:grayscale(15%) contrast(1.04);
+  aspect-ratio:9/10;object-fit:cover;
+}
+.flow-svg-mini{width:100%;height:24px;margin-top:10px;}
+.portrait-frame::before{
+  content:'KENECHUKWU OBIJIOFOR';
+  position:absolute;top:-11px;left:20px;
+  background:var(--navy-2);padding:0 10px;
+  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.5px;
+  color:var(--amber);
+}
+
 /* ---------- SECTION SHARED ---------- */
 section{padding:120px 6vw;position:relative;}
 .section-inner{max-width:1280px;margin:0 auto;}
@@ -290,34 +309,16 @@ footer{
       </div>
     </div>
 
-    <div class="flow-wrap" aria-hidden="true">
-      <svg class="flow-svg" viewBox="0 0 320 340">
-        <path id="flowpath" class="flow-line" d="M 60 40 L 160 40 L 160 110 L 260 110 L 260 180 L 160 180 L 160 250 L 60 250 L 60 320" />
-        <line class="flow-line" x1="60" y1="40" x2="60" y2="320"/>
-        <line class="flow-line" x1="260" y1="110" x2="260" y2="180"/>
-
-        <rect class="flow-node active" x="20" y="20" width="80" height="40" rx="4"/>
-        <text class="flow-label amber" x="60" y="44" text-anchor="middle">APPLICANT</text>
-
-        <rect class="flow-node" x="120" y="20" width="80" height="40" rx="4"/>
-        <text class="flow-label" x="160" y="44" text-anchor="middle">BUREAU</text>
-
-        <rect class="flow-node" x="220" y="90" width="80" height="40" rx="4"/>
-        <text class="flow-label" x="260" y="114" text-anchor="middle">FRAUD GATE</text>
-
-        <rect class="flow-node" x="120" y="160" width="80" height="40" rx="4"/>
-        <text class="flow-label" x="160" y="184" text-anchor="middle">SCORECARD</text>
-
-        <rect class="flow-node" x="20" y="230" width="80" height="40" rx="4"/>
-        <text class="flow-label" x="60" y="254" text-anchor="middle">POLICY RULE</text>
-
-        <rect class="flow-node active" x="20" y="300" width="80" height="34" rx="4"/>
-        <text class="flow-label amber" x="60" y="321" text-anchor="middle">DECISION</text>
-
-        <circle class="flow-pulse" r="3.5">
-          <animateMotion dur="6s" repeatCount="indefinite" path="M 60 40 L 160 40 L 160 110 L 260 110 L 260 180 L 160 180 L 160 250 L 60 250 L 60 320"/>
-        </circle>
-      </svg>
+    <div class="flow-wrap" aria-hidden="false">
+      <div class="portrait-frame">
+        <img src="img/kene.jpg" alt="Portrait of Kenechukwu Obijiofor" class="portrait-img">
+        <svg class="flow-svg-mini" viewBox="0 0 320 60" aria-hidden="true">
+          <circle class="flow-pulse" r="3">
+            <animateMotion dur="4s" repeatCount="indefinite" path="M 10 30 L 310 30"/>
+          </circle>
+          <line class="flow-line" x1="10" y1="30" x2="310" y2="30"/>
+        </svg>
+      </div>
     </div>
   </div>
 </header>
@@ -466,11 +467,7 @@ footer{
 
     <div class="cred-row">
       <div><div class="cred-name">MSc. Information Technology</div><div class="cred-org">MIVA Open University, Nigeria</div></div>
-      <div class="cred-date">2024 — In Progress</div>
-    </div>
-    <div class="cred-row">
-      <div><div class="cred-name">MBA</div><div class="cred-org">MIVA Open University, Nigeria</div></div>
-      <div class="cred-date">2024 — In Progress</div>
+      <div class="cred-date">2025 — In Progress</div>
     </div>
     <div class="cred-row">
       <div><div class="cred-name">B.Sc. Animal Science</div><div class="cred-org">University of Benin, Edo State</div></div>
